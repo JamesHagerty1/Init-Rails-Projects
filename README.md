@@ -3,7 +3,9 @@ them locally. They are useful when it is not convenient to install Rails on your
 machine.
 
 Build an image from `Dockerfile.init`:
-`docker build -t init-rails-projects -f Dockerfile.init .`
+```bash
+docker build -t init-rails-projects -f Dockerfile.init .
+```
 
 The image created from `Dockerfile.init` is only used to create new Rails
 projects.
@@ -11,7 +13,9 @@ projects.
 Change your present working directory to the one you would like your Rails 
 project to live under. Initialize a new Rails project in your local machine's 
 present working directory:
-`docker run -it --rm -v "$(pwd):/workspace" init-rails-projects rails new your-rails-project-name`
+```bash
+docker run -it --rm -v "$(pwd):/workspace" init-rails-projects rails new your-rails-project-name
+```
 
 Copy the `Dockerfile.dev` file from this repo into your new Rails project 
 folder, at the root of the project.
