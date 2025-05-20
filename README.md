@@ -4,6 +4,9 @@ These instructions help you initialize new Rails projects and start developing
 them locally. They are useful when it is not convenient to install Rails on your
 machine.
 
+The only assumption these instructions make is that you have Docker Desktop
+installed on your machine.
+
 Build an image from `Dockerfile.init`:
 ```bash
 docker build -t init-rails-projects -f Dockerfile.init .
