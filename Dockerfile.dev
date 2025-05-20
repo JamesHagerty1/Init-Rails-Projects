@@ -1,0 +1,27 @@
+FROM ruby:3.4.3
+
+# Install dependencies required for Rails. Dependencies determined by 
+# instructions for Ubuntu install at:
+# https://guides.rubyonrails.org/install_ruby_on_rails.html
+# (may not all be needed as their install is done differently than this)
+RUN apt-get update -qq && \
+    apt-get install -y build-essential \
+                       rustc \
+                       libssl-dev \
+                       libyaml-dev \
+                       zlib1g-dev \
+                       libgmp-dev
+                       
+# Set working directory. This is the directory that your machine should mount 
+# to.
+WORKDIR /rails_project
+
+# Install project's gems. The assumption is that this file has been copied into
+# a Rails project's root directory, where there is a Gemfile and Gemfile.lock.
+COPY Gemfile Gemfile.lock* ./
+RUN bundle install
+
+# Useful for `docker run -it`.
+# Allows user to enter into a shell for the container instead of the default 
+# entry into irb given by "FROM ruby:3.4.3".
+CMD ["bash"]
