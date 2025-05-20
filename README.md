@@ -1,3 +1,5 @@
+# Initialize Rails Projects
+
 These instructions help you initialize new Rails projects and start developing
 them locally. They are useful when it is not convenient to install Rails on your
 machine.
