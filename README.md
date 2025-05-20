@@ -49,3 +49,9 @@ network interfaces so that it can be accessed from outside of the container):
 ```bash
 bin/rails server -b 0.0.0.0
 ```
+
+To have another shell available to run `bin/rails` commands, open a separate
+shell and run:
+```bash
+docker run -it --rm -v "$(pwd):/rails_project" your-dev-image-name bash
+```
