@@ -38,6 +38,8 @@ Build the image providing a container environment for your project:
 docker build -t your-dev-image-name -f Dockerfile.dev .
 ```
 
+Any time you update the Gemfile, you should rebuild the image.
+
 Enter into the dev container's shell, and expose port 3000 to the host machine, 
 because `bin/rails server` binds to port 3000:
 ```bash
