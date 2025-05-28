@@ -17,7 +17,8 @@ projects.
 
 Change your present working directory to the one you would like your Rails 
 project to live under. Initialize a new Rails project in your local machine's 
-present working directory:
+present working directory. (Add a ` --api` flag at the end if this is to be an
+API-only Rails project):
 ```bash
 docker run -it --rm -v "$(pwd):/workspace" init-rails-projects rails new your-rails-project-name
 ```
